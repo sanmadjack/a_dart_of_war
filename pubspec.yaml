@@ -1,0 +1,12 @@
+name: a_dart_of_war
+version: 0.0.1
+description: Dart-powered web app to make the creation of Battletech RPG characters easier
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+dependencies:
+  browser: any
+  paper_elements: '>=0.5.0 <0.6.0'
+  polymer: '>=0.15.0 <0.16.0'
+transformers:
+- polymer:
+    entry_points: web/index.html

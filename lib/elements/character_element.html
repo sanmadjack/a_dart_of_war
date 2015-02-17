@@ -1,0 +1,45 @@
+<!--
+  Copyright (c) 2014, <your name>. All rights reserved. Use of this source code
+  is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../../packages/polymer/polymer.html">
+
+<link rel="import" href="../../../packages/paper_elements/paper_input.html">
+<link rel="import" href="../../../packages/paper_elements/paper_button.html">
+
+<polymer-element name="character-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <paper-input label="Type something..." inputValue="{{character.name}}"></paper-input>
+
+    <p>
+      Name: {{ character.name }}<br/>
+      EXP: {{ character.currentExp }}
+    </p>
+      <table>
+        <tr>
+          <th>Attribute</th>
+          <th>Level</th>
+          <th>Exp</th>
+        </tr>
+        <tr template repeat="{{att in character.attributes.keys}}">
+          <td>{{ att }}</td>
+          <td>{{ character.attributes[att].level }}</td>
+          <td>{{ character.attributes[att].exp }}</td>
+          <td><paper-button raised on-click="{{ addExpToAttribute }}" data-att="{{ att }}">Add 10XP</paper-button></td>
+        </tr>
+      </table>
+    
+    <p>
+      Skills:
+    </p>
+  </template>
+  <script type="application/dart" src="character_element.dart"></script>
+</polymer-element>
